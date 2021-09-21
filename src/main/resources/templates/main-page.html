@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+
+<head th:replace="layouts/main :: htmlhead"/>
+<body>
+
+<header th:replace="fragments/header :: header"/>
+
+<div class="container-fluid d-flex flex-row vh-100 p-0">
+
+    <div th:replace="fragments/navigation :: nav"/>
+
+    <div class="tab-content flex-grow-1 bg-light p-3">
+
+        <div th:replace="fragments/admin-pane"/>
+        <div th:replace="fragments/user-pane :: pane (isActive=false)"/>
+
+    </div>
+</div>
+
+<div th:replace="fragments/user-form"/>
+
+<div th:replace="layouts/main :: footer"/>
+
+</body>
+</html>

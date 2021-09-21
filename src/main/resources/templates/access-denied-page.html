@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:with="lang=${#locale.language}" th:lang="${lang}">
+
+<head th:replace="layouts/main :: htmlhead"/>
+<body>
+
+<header th:replace="fragments/header :: header"/>
+
+<div class="container-fluid d-flex flex-row vh-100 p-0">
+    <div class="tab-content flex-grow-1 bg-light p-3">
+        <h1>Access denied!</h1>
+    </div>
+</div>
+
+<div th:replace="layouts/main :: footer"/>
+</body>
+</html>

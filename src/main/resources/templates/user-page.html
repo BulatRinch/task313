@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+
+<head th:replace="layouts/main :: htmlhead"/>
+<body>
+
+<header th:replace="fragments/header :: header"/>
+
+<div class="container-fluid d-flex flex-row vh-100 p-0">
+
+    <ul class="nav flex-column nav-tabs bg-white" id="myTab" role="tablist">
+        <li class="nav-item mt-3 mb-3" role="presentation">
+            <a class="nav-link btn btn-primary pl-5 pr-5 active" id="user-area-tab" data-toggle="tab" href="#user-area" role="tab" aria-controls="user-area" aria-selected="true">User</a>
+        </li>
+    </ul>
+
+    <div class="tab-content flex-grow-1 bg-light p-3">
+
+        <div th:replace="fragments/user-pane :: pane (isActive=true)"/>
+
+    </div>
+</div>
+
+<div th:replace="fragments/user-form"/>
+
+<div th:replace="layouts/main :: footer"/>
+
+</body>
+</html>
